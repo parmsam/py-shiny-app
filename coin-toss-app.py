@@ -43,7 +43,7 @@ def server(input, output, session):
         a, b = x, [tosses[:i].mean() for i in x]
 
         h_cnt, t_cnt = np.sum(tosses == 1), np.sum(tosses == 0)
-        h = (str(h_cnt) + " heads" + percPar(h_cnt, xmax),)
+        h = str(h_cnt) + " heads" + percPar(h_cnt, xmax)
         t = str(t_cnt) + " tails" + percPar(t_cnt, xmax)
         return [h, t, a, b]
 
