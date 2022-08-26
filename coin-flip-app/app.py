@@ -8,11 +8,9 @@ import matplotlib.pyplot as plt
 def coinToss(n=1):
     return np.random.randint(0, 2, size=n)
 
-
 def percPar(cnt, n):
     perc = 100 * cnt / n
     return "(" + str(np.around(perc, 1)) + "%)"
-
 
 app_ui = ui.page_fluid(
     ui.h1("Coin toss app"),
@@ -28,7 +26,7 @@ app_ui = ui.page_fluid(
 
 def server(input, output, session):
     @output
-    @render.text
+    @render.text 
     def txt():
         vals = result()
         catch_phrase = random.choice(["Huzzah", "Horrah", "Woah"])
