@@ -49,10 +49,12 @@ def server(input, output, session):
     @render.plot(alt="A line chart")
     def plot():
         if input.obs() > 5:
-            chart = plt.plot(result()[2], result()[3])
-            plt.ylabel("Proportion of heads")
-            plt.xlabel("Flip number")
-            return chart
+            fig, ax = plt.subplots(1,1)
+            ax.plot(result()[2], result()[3])
+            ax.set_ylim([0, 1.1])
+            ax.set_ylabel("Proportion of heads")
+            ax.set_xlabel("Flip number")
+            return fig
 
 
 app = App(app_ui, server)
