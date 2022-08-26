@@ -54,6 +54,7 @@ def server(input, output, session):
             ax.set_ylim([0, 1.1])
             ax.set_ylabel("Proportion of heads")
             ax.set_xlabel("Flip number")
+            ax.hlines(y = 0.5, xmin = 0, xmax = 500, colors = 'orange', linestyles = 'dashed')
             return fig
 
 
